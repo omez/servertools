@@ -8,7 +8,10 @@ then
 	exit 2
 fi
 
-TO_DIR="/usr/local/bin"
+TO_DIR="/usr/bin"
 
-cd $(dirname $0E)
+cd $(dirname $0)
 
+ln -s -t $TO_DIR initials/st-initial.sh && chmod 755 $TO_DIR/st-initial.sh
+
+ln -s -t $TO_DIR pm-tool/pm-tool.sh && chmod 755 $TO_DIR/pm-tool.sh
