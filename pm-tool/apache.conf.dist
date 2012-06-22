@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@{%hostname%}
+	ServerName {%hostname%}
+	ServerAlias www.{%hostname%} *.{%hostname%}
+	
+	DocumentRoot /ded/www/{%projectname%}/public
+	<Directory /ded/www/{%projectname%}/public>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog /ded/www/{%projectname%}/logs/error.log
+	LogLevel warn
+	CustomLog /ded/www/{%projectname%}/logs/access.log combined
+	
+</VirtualHost>
