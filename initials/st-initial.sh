@@ -44,7 +44,7 @@ then
 	if [ -f $executable ]
 	then
 		sudo $executable
-		sudo usermod -a -G vboxfs $(whoami) # adding current user to vbox
+		sudo usermod -a -G vboxsf $(whoami) # adding current user to vbox
 	else
 		echo "Unable to install guest additions"
 		exit 1;
@@ -72,7 +72,7 @@ fi
 
 ## LAMP
 sudo apt-get -y install apache2
-sudo usermod -a -G vboxfs www-data #make apache user see additions
+sudo usermod -a -G vboxsf www-data #make apache user see additions
 
 sudo apt-get -y install php5 php5-cli 
 

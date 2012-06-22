@@ -16,7 +16,7 @@ PROJECT_LOCAL_CONFIGS_DIRNAME="config.local"
 PROJECT_LOCAL_LOGS_DIRNAME="logs"
 #APACHE_CONF_DIR="/etc/apache2"
 APACHE_DIST_CONFIG="apache.conf.dist"
-SCRIPT_DIR=$(dirname $0);
+SCRIPT_DIR=$(dirname $(readlink -f $0));
 echo "-> working script dir: $SCRIPT_DIR"
 if [ $SCRIPT_DIR == "" ]
 then

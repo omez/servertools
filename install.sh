@@ -9,9 +9,22 @@ then
 fi
 
 TO_DIR="/usr/bin"
+CURRENT_DIR=$(dirname $0)
+TOOLS=("initials/st-initial.sh" "pm-tool/pm-tool.sh")
 
-cd $(dirname $0)
 
-ln -s -t $TO_DIR initials/st-initial.sh && chmod 755 $TO_DIR/st-initial.sh
+cd $CURRENT_DIR;
+echo "-> original dir: $PWD" 
 
-ln -s -t $TO_DIR pm-tool/pm-tool.sh && chmod 755 $TO_DIR/pm-tool.sh
+for tool in ${TOOLS[@]}
+do
+	linkname=`basename ./$tool .sh`
+	fullname=$TO_DIR/$linkname
+	
+	echo "-> registering $tool => $fullname"
+	
+	ln -f -s $PWD/$tool $fullname
+done
+
+
+echo "Done!"
