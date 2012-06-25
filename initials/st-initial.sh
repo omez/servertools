@@ -35,10 +35,10 @@ sudo apt-get -y install mc htop openssh-server
 
 ## Guest additions
 echo "-> Install Guest Additions"
-if [ ! `VBoxControl -v` ]
+if [ `VBoxControl -v`!="" ]
 then 
 
-	sudo apt-get -y install build-essentials
+	sudo apt-get -y install build-essentials dkms
 	sudo mount /dev/cdrom /media/cdrom # mounting cdrom with guest additions executable
 	executable="/media/cdrom/VBoxLinuxAdditions.run"
 	if [ -f $executable ]
