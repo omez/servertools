@@ -89,3 +89,8 @@ sudo apt-get -y install subversion
 sudo apt-get -y install git
 
 
+
+## Pinba-specific libs
+sudo apt-get -y install libprotobuf-dev libprotobuf-lite7 libprotobuf7 protobuf-compiler
+sudo apt-get -y install libjudydebian1 libevent-dev libevent-2.0-5 libevent-core-2.0-5 libevent-extra-2.0-5 libevent-openssl-2.0-5 libevent-pthreads-2.0-5 
+
